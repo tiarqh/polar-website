@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="globals.css" />
+    <link rel="stylesheet" href="styleguide.css" />
+    <link rel="stylesheet" href="contact-us.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Contact Us</title>
+    <link rel="icon" href="img/logo-polar-crop-2.png" type="image/png" />
+  </head>
+  <body>
+    <div class="contact-us">
+      <div class="frame-wrapper">
+        <div class="frame">
+          <header class="header">
+            <a href="homepage.html"><img class="logo-polar-crop" src="img/logo-polar-crop-2.png" /></a>
+            <div class="menu">
+              <div class="menu-item"><a href="homepage.html"><div class="text-wrapper">Home Page</div></a></div>
+              <div class="menu-item"><a href="lecturer.html"><div class="text-wrapper">Lecturer</div></a></div>
+              <div class="menu-item"><a href="studio.html"><div class="text-wrapper">Studio</div></a></div>
+              <div class="menu-item active"><a href="contact-us.html"><div class="text-wrapper">Contact Us</div></a></div>
+            </div>
+          </header>
+          <div class="form">
+            <div class="overlap-group">
+              <div class="image-placeholder">
+                <img class="image-icon" src="img/image-icon.png" />
+              </div>
+              <div class="form-wrapper">
+                <form id="contactForm" novalidate>
+                    <div class="heading">Get in touch today</div>
+                    <p class="paragraph">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit tortor eu dolorol egestas morbi sem vulputate
+                        etiam facilisis pellentesque ut quis.
+                    </p>
+                    <div class="div-2">
+                        <div class="form-columns">
+                            <div class="div-2">
+                                <div class="element">
+                                    <div class="label">Name</div>
+                                    <div class="input-text">
+                                        <div class="master-input-text">
+                                            <div class="input-left">
+                                                <input type="text" class="input-placeholder" placeholder="Mutiara Qamiliah" name="name" id="name" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" id="error-name"></div>
+                                </div>
+                                <div class="element">
+                                    <div class="label">Phone</div>
+                                    <div class="input-text">
+                                        <div class="master-input-text">
+                                            <div class="input-left">
+                                                <input type="tel" class="input-placeholder" placeholder="(+62) 8" name="phone" id="phone" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" id="error-phone"></div>
+                                </div>
+                            </div>
+                            <div class="div-2">
+                                <div class="element">
+                                    <div class="label">Email</div>
+                                    <div class="input-text">
+                                        <div class="master-input-text">
+                                            <div class="input-left">
+                                                <input type="email" class="input-placeholder" placeholder="example@email.com" name="email" id="email" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" id="error-email"></div>
+                                </div>
+                                <div class="element">
+                                    <div class="label">Company</div>
+                                    <div class="input-text">
+                                        <div class="master-input-text">
+                                            <div class="input-left">
+                                                <input type="text" class="input-placeholder" placeholder="Spice UI" name="company" id="company" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="error-message" id="error-company"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="element">
+                            <div class="label">Leave us a message</div>
+                            <div class="text-area">
+                                <textarea class="p" placeholder="Please type your message here..." name="message" id="message"></textarea>
+                            </div>
+                            <div class="error-message" id="error-message"></div>
+                        </div>
+                        <button type="submit" class="master-primary"><div class="button-text">Send message</div></button>
+                    </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="top">
+              <div class="logo-container"><a href="homepage.html"><img class="logo-polar-crop" src="img/logo-polar-crop-2.png" /></a></div>
+              <div class="menu-2">
+                <div class="menu-item"><a href="homepage.html"><div class="text-wrapper">Home Page</div></a></div>
+                <div class="menu-item"><a href="lecturer.html"><div class="text-wrapper">Lecturer</div></a></div>
+                <div class="menu-item"><a href="studio.html"><div class="text-wrapper">Studio</div></a></div>
+                <div class="menu-item"><a href="contact-us.html"><div class="text-wrapper">Contact Us</div></a></div>
+             </div>
+                <div class="social-icons">
+                    <a href="#" style="color: white;"><i class="fas fa-envelope"></i></a>
+                    <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/lab.promed.ui?igsh=Y2JsMXQ2ZnQzN244" target="_blank" style="color: white;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" style="color: white;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="text-wrapper-2">Polar Lab @ 2025. All rights reserved.</p>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', function(e) {
+        let valid = true;
+
+        // Helper
+        function setError(id, message) {
+            document.getElementById(id).previousElementSibling.querySelector('input, textarea').style.outline = '2px solid red';
+            document.getElementById(id).textContent = message;
+        }
+        function clearError(id) {
+            const el = document.getElementById(id).previousElementSibling.querySelector('input, textarea');
+            if (el) el.style.outline = '';
+            document.getElementById(id).textContent = '';
+        }
+
+        // Name
+        if (!form.name.value.trim()) {
+            setError('error-name', 'Please enter your name.');
+            valid = false;
+        } else {
+            clearError('error-name');
+        }
+        // Phone
+        if (!form.phone.value.trim()) {
+            setError('error-phone', 'Please enter your phone number.');
+            valid = false;
+        } else {
+            clearError('error-phone');
+        }
+        // Email
+        if (!form.email.value.trim()) {
+            setError('error-email', 'Please enter your email.');
+            valid = false;
+        } else {
+            clearError('error-email');
+        }
+        // Company
+        if (!form.company.value.trim()) {
+            setError('error-company', 'Please enter your company.');
+            valid = false;
+        } else {
+            clearError('error-company');
+        }
+        // Message
+        if (!form.message.value.trim()) {
+            setError('error-message', 'Please enter your message.');
+            valid = false;
+        } else {
+            clearError('error-message');
+        }
+
+        if (!valid) {
+            e.preventDefault();
+        } else {
+            window.location.href = 'thankyou.html';
+            e.preventDefault();
+        }
+    });
+
+    // Remove error on input
+    ['name','phone','email','company','message'].forEach(function(field) {
+        document.getElementById(field).addEventListener('input', function() {
+            document.getElementById('error-' + field).textContent = '';
+            this.style.outline = '';
+        });
+    });
+});
+</script>
+<style>
+.error-message {
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+    min-height: 16px;
+}
+</style>
